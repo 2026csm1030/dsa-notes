@@ -6,35 +6,31 @@ private:
     int arr[100];
     int front;
     int rear;
-    int size;
 
 public:
     Queue() {
         front = 0;
         rear = -1;
-        size = 0;
     }
 
     bool isEmpty() {
-        return size == 0;
+        return front > rear;
     }
 
     bool isFull() {
-        return size == 100;
+        return rear == 99;
     }
 
     void enqueue(int x) {
         if (isFull()) return;
-        rear = (rear + 1) % 100;
+        rear++;
         arr[rear] = x;
-        size++;
     }
 
     int dequeue() {
         if (isEmpty()) return -1;
         int val = arr[front];
-        front = (front + 1) % 100;
-        size--;
+        front++;
         return val;
     }
 
@@ -44,7 +40,7 @@ public:
     }
 
     int getSize() {
-        return size;
+        return rear - front + 1;
     }
 };
 
