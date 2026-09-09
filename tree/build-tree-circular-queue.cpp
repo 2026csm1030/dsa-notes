@@ -138,6 +138,9 @@ void inOrder(Node *root)
 
 int main()
 {
+  // input: 1 2 3 4 5 -1 6 -1 -1 7 8 -1 -1 -1 -1 -1 -1
+  // output: 4 2 7 5 8 1 3 6
+  
   Node *root = buildTree();
 
   cout << endl;
